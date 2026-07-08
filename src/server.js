@@ -1,5 +1,7 @@
 const app = require("./app")
 
-app.listen(5555, ()=>{
-    console.log("✅ server rurning on port 5555")
+const PORT = process.env.PORT || 5555;
+
+app.listen(PORT, ()=>{
+    console.log(`✅ Server Rurning in port ${PORT}`)
 })
