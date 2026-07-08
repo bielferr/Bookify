@@ -1,0 +1,27 @@
+{
+  "name": "bookify-proto",
+  "version": "1.0.0",
+  "description": "\"# Bookify\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bielferr/Bookify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bielferr/Bookify/issues"
+  },
+  "homepage": "https://github.com/bielferr/Bookify#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
