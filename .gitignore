@@ -1,0 +1,32 @@
+# Keep environment variables out of version control
+
+/src/generated/prisma
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build
+dist/
+build/
+
+# Cobertura de testes
+coverage/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações do VS Code
+.vscode/
+
+*.tgz
