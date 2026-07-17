@@ -1,8 +1,9 @@
 const prisma = require("../database/prisma")
-
+const brcrypt = require("bcrypt")
 class UserController{
     async create(req,res){
         const {name, email, password} = req.body;
+        const hasheadPassword = await brcrypt.hash(password, 10)
 
         const userAlreadyExists = await  prisma.user.findUnique({
             where:{
@@ -20,8 +21,16 @@ class UserController{
             data: {
                 name,
                 email,
-                password,
+                password:hasheadPassword,
             },
+
+            select:{
+                id:true,
+                name:true,
+                email:true,
+                role: true,
+                createdAt:true    
+            }
         })
         return res.status(201).json(user)
     }
