@@ -1,6 +1,6 @@
 const prisma = require("../database/prisma")
 const bcrypt = require("bcrypt")
-
+const jsonwebtoken = require("jsonwebtoken")
 
 class SessionController {
     async create(req,res){
