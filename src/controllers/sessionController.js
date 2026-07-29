@@ -22,7 +22,6 @@ class SessionController {
             user.password
         )
 
-
         if(!passwordMatched){
             return res.status(401).json({ 
                 message:"Invalid email or password."})

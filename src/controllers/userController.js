@@ -36,10 +36,34 @@ class UserController{
     }
 
     async index(req,res){
-    const users = await prisma.user.findMany();
+        const users = await prisma.user.findMany();
 
-    return res.json(users);
+        return res.json(users);
+    }
 
+    async show(req,res){
+        const searchId = req.user.id
+
+        const user = await prisma.user.findUnique({
+            where: {
+                id: searchId
+            },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                role: true,
+                createdAt: true
+    }
+        })
+
+        if(!user){
+            return res.status(404).json({
+                message: "User not found "
+            })
+        }
+
+        return res.json(user)
     }
 }
 

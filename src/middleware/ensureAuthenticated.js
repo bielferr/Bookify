@@ -19,16 +19,16 @@ function ensureAuth(req,res,next){
    }
 try {
 
-    const decoded =  jsonwebtoken.verify(token, authConfig.secret)
+    const decoded =  jsonwebtoken.verify(token, authConfig.jwt.secret)
     req.user = decoded
-    next()
-}catch(error){
-    return res.status(401).json({
-        message:"Invalid JWT token "
-    })
-}
-    
 
+    next()
+
+}   catch(error){
+        return res.status(401).json({
+            message:"Invalid JWT token "
+        })
+}
 
 }
 
